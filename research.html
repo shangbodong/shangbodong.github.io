@@ -34,15 +34,13 @@ We focus on developing fundamental mathematical tools and communication principl
 Our research is largely interdisciplinary and draws upon tools from optimization, probability and statistics, machine learning, game theory, control, and economics to design and build wireless communication systems.</p>
 <p>We are currently focused on several research thrusts for next generation mobile networks (6G):<img src="images/6G.jpg" alt="6G" width="244" height="149" align="right" /></p>
 <ul>
-<li><p>Space-Air-Ground-Sea Integrated Networks (SAGSIN)</p>
+<li><p>Resource Management in Satellite-Terrestrial Integrated Network (STIN)</p>
 </li>
-<li><p>Non-Terrestrial Networks (NTN)</p>
+<li><p>Satellite-Borne and Terminal Physical-Layer Communication Algorithms</p>
 </li>
-<li><p>Satellite Commnications and Networking</p>
+<li><p>In-Space Computing and Space-Native Artificial Intelligence (AI)</p>
 </li>
-<li><p>Internet of Vehicles (IoV), Vehicle-to-Everything (V2X)</p>
-</li>
-<li><p>Edge Computing</p>
+<li><p>Preliminary Research on Large-Scale Satellite Constellation Networking Technologies</p>
 </li>
 </ul>
 </div></div>
@@ -51,139 +49,187 @@ Our research is largely interdisciplinary and draws upon tools from optimization
 <img src="images/WeChat Account.png" alt="WeChat Account" width="300" height="280" align="right" />
 </div>
 
-<h2>Space-Air-Ground-Sea Integrated Networks</h2>
-<p>Industry and academia are paying increasing attention to sixth-generation (6G) communication network research. 
-The visioning and planning of 6G communications have begun, intending to provide communication services for future demands. 6G is towards ubiquitous 3D coverage, intelligent and green networks, the Internet of Everything, etc. 
-As a result, 6G will combine different networks: satellites, oceans, airplanes, mobile cellular, and other undefined networks to achieve seamless coverage of integrated information.</p>
+<h2>1. Resource Management in Satellite-Terrestrial Integrated Network (STIN)</h2>
+<p>Driven by booming non terrestrial networks (NTNs) and large scale satellite constellations, future wireless systems are evolving from purely terrestrial cellular networks toward highly heterogeneous satellite terrestrial integrated networks (STIN). By combining satellite and terrestrial infrastructures, 6G aims to deliver ubiquitous connectivity, flexible access and continuous service coverage across diverse geographic regions. Nevertheless, space and terrestrial segments differ drastically in network topology, radio propagation, resource availability, node mobility and service demands. The inherently dynamic satellite topology together with scarce spectrum, onboard power and computing resources brings substantial obstacles to stable and efficient network operation.</p>
 
-<p>Space-air-ground-sea integrated networks (SAGSIN) have gained significant attention and become a promising architecture for ubiquitous connectivity for 5G-Advanced and 6G, enabling the integration of space, aerial, and terrestrial network segments.
-In SAGSIN, as a multidimensional network, computation and communication resources will be unbalanced in different network segments, even in different satellite orbits.
-Therefore, network segments would cooperate with each other to fully utilize the limited resources and provide better performance.
-This integration brings tremendous communication benefits, including non-terrestrial networks, seamless global coverage, high flexibility, and augmented system capacity. 
-However, various technical problems must be solved when we embrace satellite communications, such as highly dynamic networks, scarce frequency resources, heterogeneous integration with terrestrial networks, etc. 
-Some of the research directions we are working on are listed below for reference.</p>
+<p>Sophisticated resource management is critical to orchestrate heterogeneous space ground subsystems and unleash their complementary strengths. We develop mathematical frameworks, analytical tools, optimization methods and AI driven strategies for STIN resource management. Our work spans multi connectivity, spectrum sharing, cooperative transmission, interference mitigation, satellite integrated sensing and communications (ISAC), as well as joint communication computation resource allocation.</p>
+
+<ul>
+<br>
+<li><p>Joint spectrum, power, and user association optimization</p>
+</li>
+<li><p>Multi connectivity and cooperative satellite terrestrial communications</p>
+</li>
+<li><p>Spectrum sharing between satellite and terrestrial networks</p>
+</li>
+<li><p>Interference management for STIN</p>
+</li>
+<li><p>Resource allocation for satellite empowered computing</p>
+</li>
+<li><p>Satellite integrated sensing and communication (ISAC) networks</p>
+</li>
+<li><p>Large scale resource management for 6G non terrestrial networks, etc.</p>
+</li>
+</ul>
+</li>
+</ul>
 
 
 <table class="imgtable"><tr>
 <td>
-<img src="images/SAGIN.jpg" alt="Space-air-ground integrated networks" width="550px" height="500px" />&nbsp;&nbsp;&nbsp; <img src="images/NTN-TN SS.jpg" alt="NTN-TN SS" width="700" height="476" />
-&nbsp;&nbsp;&nbsp; <img src="images/UAV.jpg" alt="UAV-assisted communications" width="550" height="350" />
-&nbsp;&nbsp;&nbsp; <img src="images/SatelliteNM.jpg" alt="SatelliteNM" width="667" height="416" />
-&nbsp;&nbsp;&nbsp; <img src="images/Sat-Maritime.jpg" alt="Sat-Maritime" width="586" height="383" />
-&nbsp;&nbsp;&nbsp; <img src="images/Co-SEC.jpg" alt="Co-SEC" width="613" height="485" /></td>
-<td align="left"></td></tr></table>
-<ul>
-<br>
-<li>
-<p>Enabling Key Technologies for Non-Terrestrial Networks (NTN)</p>
-<ul>
-<li><p>Heterogeneous integration of satellite communication and 5G terrestrial networks</p>
-</li>
-<li><p>Computing over space-air-ground-sea integrated networks (SAGSIN)</p>
-</li>
-<li><p>Spectrum Sharing for low earth orbit (LEO) satellite communications</p>
-</li>
-<li><p>Communication protocol design for NTN</p>
-</li>
-<li><p>Resource allocation in satellite-terrestrial networks</p>
-</li>
-<li><p>Intelligent interference management in NTN, etc.</p>
-</li>
-</ul>
-</li>
-</ul>
-
-<ul>
-<li><p>Unmanned Aerial Vehicle (UAV) and Terrestrial Networks</p>
-<ul>
-<li><p>Resource allocation in UAV communications</p>
-</li>
-<li><p>Efficient UAV swarm networking and communications</p>
-</li>
-<li><p>Reconfigurable intelligent surfaces (RIS) and UAV</p>
-</li>
-<li><p>Multi-antenna techniques, multi-channel communications</p>
-</li>
-<li><p>Integrated sensing and communication (ISAC), etc.</p>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Internet of Vehicles (IoV)</h2>
-<p>Internet of Vehicles (IoV) is a network of vehicles equipped with sensors, software, and technologies that mediate between these to connect and exchange data over the Internet according to agreed standards. It is expected that IoV will be one of the enablers for autonomous, connected, electric, and shared future mobility. The vehicle could communicate with any entity that may affect or may be affected by the car. Vehicle-to-everything is a vehicular communication system that incorporates other more specific types of communication such as V2I (vehicle-to-infrastructure), V2N (vehicle-to-network), V2V (vehicle-to-vehicle), V2P (vehicle-to-pedestrian), V2D (vehicle-to-device), which can be used for road safety, traffic efficiency, energy savings, and mass surveillance. Besides, cellular V2X (C-V2X) is proposed as a 3GPP standard, an alternative to IEEE 802.11p, for V2X applications such as self-driving cars. Interestingly, C-V2X mode four communication relies on a distributed resource allocation scheme, namely sensing-based semi-persistent scheduling, which schedules radio resources in a stand-alone fashion in each user equipment. However, many problems need to be solved in IoV, such as limited bandwidth and data rate, limits of signal propagation due to surroundings, imperfect channel state information, etc. Intelligent transportation system (ITS) is an advanced application that aims to provide innovative services relating to different modes of transport and traffic management. It enables users to be better informed and make safer, more coordinated, and 'smarter' use of transport networks. Various forms of wireless technologies could be used for ITS. Some of the research directions we are working on are listed below.
-</p>
-<table class="imgtable"><tr>
-<td>
-<img src="images/V2X1.jpg" alt="Internet of vehicles" width="550" height="350" />
-&nbsp;&nbsp;&nbsp; <img src="images/V2V.jpg" alt="Internet of vehicles" width="527" height="337" />
-&nbsp;&nbsp;&nbsp; <img src="images/VEC11.jpg" alt="C-V2X" width="550" height="350" />
-&nbsp;&nbsp;&nbsp; <img src="images/Sat-VEC.jpg" alt="Sat-VEC" width="646" height="350" /></td>
-<td align="left"></td></tr></table>
-<ul>
-<br>
-<li>
-<p>Intelligent Connected Vehicles and Advanced Transportation Systems</p>
-<ul>
-<li><p>Vehicular communications, sensing, and spectrum-sharing technologies</p>
-</li>
-<li><p>Vehicular edge computing (VEC) systems</p>
-</li>
-<li><p>Internet of Vehicles (IoV) network architecture design</p>
-</li>
-<li><p>Integrated sensing and communications (ISAC) in vehicular networks</p>
-</li>
-<li><p>Intelligent transportation systems (ITS)</p>
-</li>
-<li><p>Communication protocol design based on cellular vehicle-to-everything (C-V2X)</p>
-</li>
-<li><p>Satellite-assisted IoV</p>
-</li>
-<li><p>Content cache and distribution in IoV, etc.</p>
-</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>Artificial Intelligence (AI) for Wireless Communication Systems</h2>
-<p>Artificial intelligence (AI) is the key to overcoming complexity in modern wireless systems design. 
-AI promises to address the design complexity of radio frequency (RF) systems by employing powerful machine learning algorithms and significantly improving RF parameters such as channel bandwidth, antenna sensitivity, and spectrum monitoring.
-Wireless networks have also become more challenging to manage due to requirements necessitating optimal sharing of valuable resources to expanding sets of users. 
-AI has brought the sophistication necessary for modern wireless applications. 
-As the number and scope of devices connected to networks expand, so will AI's role in wireless. 
-Besides, AI techniques can better solve non-linear problems by extracting any pattern automatically and efficiently, beyond the ability of human-based approaches.</p>
-
-<p>Compared to previous generations of mobile communication networks, 6G pursues higher data rate and capacity, more stringent latency constraints, ultra-reliability, more comprehensive coverage, higher energy efficiency, etc.
-These goals pose more complex problems, efficient algorithms for optimizing radio resources, and effective learning from the physical layer to higher layers.
-AI could be a disruptive technology to solve challenging problems related to estimation, optimization, analysis, and prediction.
-This enables us to further increase communication system performance by integrating various AI models and traditional methods.
-Some of the research thrusts we are working on are listed below.
-</p>
-<table class="imgtable"><tr>
-<td>
-<img src="images/AI6G.jpg" alt="AI6G" width="550px" height="374" />&nbsp;&nbsp;&nbsp; <img src="images/RL.jpg" alt="RL" width="550px" height="374" />&nbsp;&nbsp;&nbsp; <img src="images/AI NTN.jpg" alt="AI NTN" width="530" height="410" />&nbsp;&nbsp;&nbsp;  <img src="images/A3C.jpg" alt="A3C" width="550" height="319" /></td>
-<td align="left"></td></tr></table>
-<ul>
-<br>
-<li><p>Machine Learning for Wireless Communication Systems</p>
-<ul>
-<li><p>AI at the physical layer (PHY): machine learning for signal processing, deep reinforcement learning, online machine learning, self-supervised learning, etc.</p>
-</li>
-<li><p>AI at the media access control (MAC) layer: deep learning for dynamic media access, wireless interference identification, etc.</p>
-</li>
-<li><p>Machine learning for wireless network optimization: deep learning and deep reinforcement learning assisted resource allocation design, federated learning for edge intelligence, etc.</p>
-</li>
-<li><p>Machine learning for network traffic prediction, analysis, optimization, load balancing, etc.</p>
-</li>
-<li><p>Machine learning theory: interpretation, generality, theoretical analysis, etc.</p>
-</li>
-</ul>
-</li>
-</ul>
+<img src="images/1-1.jpg" alt="1-1" width="838" height="745" />&nbsp;&nbsp;&nbsp; 
+<img src="images/1-2.jpg" alt="1-2" width="827" height="573" />&nbsp;&nbsp;&nbsp; 
+<img src="images/1-3.jpg" alt="1-3" width="829" height="576" />&nbsp;&nbsp;&nbsp; 
+<img src="images/1-4.jpg" alt="1-4" width="828" height="759" />&nbsp;&nbsp;&nbsp;
 </td>
-</tr>
-</table>
+<td align="left"></td></tr></table>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+<h2>2. Satellite-Borne and Terminal Physical-Layer Communication Algorithms</h2>
+<p>6G satellite communication systems require cutting edge physical layer techniques to realize high throughput, reliable and global connectivity over highly time varying space ground channels. Unlike terrestrial communication systems, satellite links suffer from long propagation delays, significant Doppler shifts, fast channel fluctuation, broad coverage footprints, limited onboard hardware, and strict payload complexity and power constraints. Meanwhile, the proliferation of multi antenna satellites and mega constellations opens new possibilities for advanced transceiver designs.</p>
+
+<p>We investigate fundamental physical layer algorithms for both satellite payloads and end user terminals. Our target is practical, high efficiency signal processing and transmission schemes that jointly account for satellite channel characteristics, node mobility, interference and hardware limitations. Our research covers theoretical algorithm derivation as well as implementation oriented design, with emphasis on low complexity, scalable solutions for next generation NTNs.</p>
+
+<ul>
+<br>
+<li><p>On satellite beamforming and multi antenna transmission</p>
+</li>
+<li><p>Channel estimation and synchronization for satellite communications</p>
+</li>
+<li><p>Doppler estimation and compensation for high mobility NTNs</p>
+</li>
+<li><p>OFDM/OTFS and advanced waveform optimization for satellite channels</p>
+</li>
+<li><p>Multi user detection and interference suppression</p>
+</li>
+<li><p>Cooperative joint transmission and reception among satellites</p>
+</li>
+<li><p>Low complexity algorithms for resource limited satellite user terminals, etc.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<table class="imgtable"><tr>
+<td>
+<img src="images/2-1.jpg" alt="2-1" width="799" height="648" />&nbsp;&nbsp;&nbsp; 
+<img src="images/2-2.jpg" alt="2-2" width="825" height="634" />&nbsp;&nbsp;&nbsp; 
+<img src="images/2-3.jpg" alt="2-3" width="578" height="474" />&nbsp;&nbsp;&nbsp; 
+<img src="images/2-4.jpg" alt="2-4" width="701" height="216" />&nbsp;&nbsp;&nbsp;
+<img src="images/2-5.jpg" alt="2-5" width="784" height="230" />&nbsp;&nbsp;&nbsp;
+</td>
+<td align="left"></td></tr></table>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+<h2>3. In-Space Computing and Space-Native Artificial Intelligence (AI)</h2>
+<p>With the rapid scaling of satellite constellations, satellites are transforming from pure communication relays into geographically distributed computing nodes in outer space. In space computing enables data processing close to its source, avoiding massive raw data backhaul toward ground facilities and supporting low latency space born services. The fusion of communication, computing and artificial intelligence will serve as a cornerstone for future intelligent space networks.</p>
+
+<p>In space computing faces inherent difficulties including constrained onboard compute capacity, tight energy budgets, intermittent inter node connectivity, large propagation latency, time evolving topology and heterogeneous satellite platforms. Conventional ground cloud and edge computing paradigms cannot be directly ported to such harsh space environments. We study distributed computing architectures and intelligent processing mechanisms tailored for satellite networks, pursuing space native solutions that fully adapt to unique space operational conditions.</p>
+
+<p>Space native AI envisions building space computing power networks and distributed in orbit space data centers atop satellite constellations, instead of simply migrating terrestrial AI models to satellites. It advocates model training, inference, feature extraction and intelligent decision making performed natively in orbit. This paradigm alleviates heavy data downloading burdens, reduces end to end latency for space missions, and supports real time onboard intelligence for communication, remote sensing and in orbit task scheduling. It poses new challenges: distributed model update under intermittent links, computation energy trade offs on resource constrained satellites, adaptive federated learning across heterogeneous orbital nodes, and lightweight AI architecture customized for space hardware.</p>
+
+<ul>
+<br>
+<li><p>Multi satellite cooperative in space computing</p>
+</li>
+<li><p>Computation offloading and task scheduling over satellite networks</p>
+</li>
+<li><p>Space computing power networks</p>
+</li>
+<li><p>On orbit AI training and inference</p>
+</li>
+<li><p>Distributed AI learning and inference across satellite constellations</p>
+</li>
+<li><p>Onboard AI for satellite communications and networking</p>
+</li>
+<li><p>Space native AI architectures and algorithms
+</li>
+<li><p>Resource aware intelligent scheduling for large scale AI enabled satellite constellations, etc.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<table class="imgtable"><tr>
+<td>
+<img src="images/3-1.jpg" alt="3-1" width="829" height="701" />&nbsp;&nbsp;&nbsp; 
+<img src="images/3-2.jpg" alt="3-2" width="725" height="616" />&nbsp;&nbsp;&nbsp; 
+<img src="images/3-3.jpg" alt="3-3" width="887" height="479" />&nbsp;&nbsp;&nbsp; 
+<img src="images/3-4.jpg" alt="3-4" width="828" height="363" />&nbsp;&nbsp;&nbsp;
+</td>
+<td align="left"></td></tr></table>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+<h2>4. Preliminary Research on Large-Scale Satellite Constellation Networking Technologies</h2>
+<p>Massive deployment of low Earth orbit (LEO) mega constellations is reshaping non terrestrial network architectures and unlocking new potential for worldwide connectivity and distributed space services. As satellite systems scale from isolated spacecraft to mega constellations, satellite networks operate as large scale, highly dynamic distributed communication systems. Thousands of satellites interconnected via inter satellite links and interoperable with terrestrial infrastructure deliver flexible, expandable network resources. At the same time, massive node quantity and high orbital mobility bring tough challenges in topology control, routing, inter node coordination, time synchronization and overall network scalability.</p>
+
+<p>We explore core networking technologies for future large scale satellite constellations. Beyond point to point satellite link studies, we treat the entire constellation as a holistic large scale distributed system, and investigate its network architecture, connectivity property, inter satellite communication and coordination mechanisms. Our objective is to establish scalable networking principles to sustain efficient operation and future evolution of satellite mega constellations.</p>
+
+•	Stochastic geometry driven network performance analysis and optimization
+•	Inter satellite link architecture and network topology design
+•	Dynamic topology management and routing for satellite networks
+•	Multi satellite cooperative communications and networking
+•	Radio frequency and optical inter satellite link technologies
+•	Distributed coordination and network synchronization
+•	Scalable network protocols for satellite mega constellations
+•	Interworking and integration between large scale constellations and terrestrial networks
+
+<ul>
+<br>
+<li><p>Stochastic geometry driven network performance analysis and optimization</p>
+</li>
+<li><p>Inter satellite link architecture and network topology design</p>
+</li>
+<li><p>Dynamic topology management and routing for satellite networks</p>
+</li>
+<li><p>Multi satellite cooperative communications and networking</p>
+</li>
+<li><p>Radio frequency and optical inter satellite link technologies</p>
+</li>
+<li><p>Distributed coordination and network synchronization</p>
+</li>
+<li><p>Scalable network protocols for satellite mega constellations</p>
+</li>
+<li><p>Interworking and integration between large scale constellations and terrestrial networks, etc.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<table class="imgtable"><tr>
+<td>
+<img src="images/4-1.jpg" alt="4-1" width="838" height="498" />&nbsp;&nbsp;&nbsp; 
+<img src="images/4-2.jpg" alt="4-2" width="827" height="573" />&nbsp;&nbsp;&nbsp; 
+<img src="images/4-3.jpg" alt="4-3" width="829" height="576" />&nbsp;&nbsp;&nbsp; 
+<img src="images/4-4.jpg" alt="4-4" width="828" height="615" />&nbsp;&nbsp;&nbsp;
+<img src="images/4-5.jpg" alt="4-5" width="828" height="649" />&nbsp;&nbsp;&nbsp;
+</td>
+<td align="left"></td></tr></table>
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+
+
 </body>
 </html>
