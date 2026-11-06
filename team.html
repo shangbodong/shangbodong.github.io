@@ -4,8 +4,217 @@
 <head>
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Group | Wireless Communications and Networking Lab</title>
+<title>Group | 6G Space-Air-Ground-Sea Integrated Networks Lab</title>
+<style type="text/css">
+/* ---------- 布局：菜单栏与标题保持 jemdoc 默认靠左，不参与居中 ---------- */
+#toptitle { text-align: left; margin-left: 0; }
+#layout-content h1, #layout-content h2 { text-align: left; }
+
+.group-box {
+  border: 1px solid #dfe3e8;
+  border-left: 5px solid #999;
+  border-radius: 10px;
+  background: #fbfcfd;
+  padding: 0 22px 22px 22px;
+  margin: 0 0 34px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.group-box.PI      { border-left-color: #1a4f8a; background: #f7fafd; }
+.group-box.phd        { border-left-color: #0f7b6c; background: #f6fbfa; }
+.group-box.UG      { border-left-color: #b07b16; background: #fdfaf5; }
+.group-box.alumni-box { border-left-color: #6b6b7b; background: #fafafc; }
+
+/* 分类标题栏 */
+.group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 18px 0 4px 0;
+  margin-bottom: 16px;
+  border-bottom: 1px dashed #d5dae0;
+}
+.group-head h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  color: #1f2d3d;
+}
+.group-head .group-sub {
+  font-size: 13px;
+  color: #7a828c;
+}
+.group-head .count {
+  margin-left: auto;
+  font-size: 12px;
+  color: #fff;
+  background: #98a2ad;
+  border-radius: 20px;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+.group-box.PI .count { background: #1a4f8a; }
+.group-box.phd   .count { background: #0f7b6c; }
+.group-box.UG .count { background: #b07b16; }
+.group-box.alumni-box .count { background: #6b6b7b; }
+
+/* 固定宽度卡片 + 换行居中：每行人数随视口宽度自动变化，且末行也居中 */
+.member-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 22px;
+}
+.member-card {
+  box-sizing: border-box;
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 340px;
+  background: #ffffff;
+  border: 1px solid #e6eaee;
+  border-radius: 8px;
+  padding: 20px 18px;
+  text-align: center;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.member-card:hover {
+  transform: translateY(-3px);
+  border-color: #c3ccd6;
+  box-shadow: 0 6px 16px rgba(31,45,61,.10);
+}
+
+/* 头像：图片加载失败时显示姓名首字母 */
+.avatar {
+  position: relative;
+  width: 118px;
+  height: 118px;
+  margin: 0 auto 12px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #8496a8, #5b6b7c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e6ea;
+}
+.avatar .initials {
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+.avatar img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #16283c;
+  margin-bottom: 6px;
+}
+.member-role {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #55606d;
+  background: #eef2f6;
+  border-radius: 4px;
+  padding: 3px 9px;
+  margin-bottom: 10px;
+}
+.group-box.PI .member-role { background: #e6eef7; color: #1a4f8a; }
+.group-box.phd   .member-role { background: #e3f2ef; color: #0f7b6c; }
+.group-box.UG .member-role { background: #f8f0df; color: #8a5f13; }
+.member-bio {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #46505c;
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 0;
+}
+
+/* 校友：紧凑排布 */
+.alumni-list {
+  columns: 320px 2;      /* 列宽至少 320px，最多 2 列；窄屏自动降为 1 列 */
+  column-gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.alumni-list li {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #46505c;
+  padding: 5px 0 5px 14px;
+  position: relative;
+  break-inside: avoid;
+}
+.alumni-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 12px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: #98a2ad;
+}
+
+/* 校园图片 */
+.campus-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+.campus-gallery img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e6eaee;
+}
+
+/* ---------- 按屏幕宽度自适应每行成员数 ---------- */
+/* 大屏电脑（>=1200px）：每行约 3 人 */
+@media (min-width: 1200px) {
+  .member-card { flex-basis: 300px; max-width: 340px; }
+}
+/* 普通电脑 / 平板横屏（901–1199px）：每行 2–3 人 */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .member-card { flex-basis: 280px; max-width: 320px; }
+}
+/* 平板竖屏（641–900px）：每行约 2 人 */
+@media (min-width: 641px) and (max-width: 900px) {
+  .member-card { flex-basis: 260px; max-width: 360px; }
+}
+/* 手机（<=640px）：每行 1 人，卡片撑满宽度 */
+@media (max-width: 640px) {
+  .member-card { flex: 1 1 100%; max-width: 100%; }
+  .group-box { padding-left: 14px; padding-right: 14px; }
+  .campus-gallery { grid-template-columns: 1fr; }
+  .avatar { width: 100px; height: 100px; }
+}
+
+/* ---------- PI 单人卡片：加宽，消除左右留白、避免简介挤成又窄又长的一列 ----------
+   .member-card 默认 max-width:340px，且上面各 @media 又重复限宽；
+   PI 栏目只有一张卡片，居中后两侧空一大片，文字被挤成长条。
+   这里用 .group-box.PI .member-card（选择器更具体，优先级更高）覆盖限宽，
+   让 PI 卡片撑满 group-box 的内容宽度，其余分组的卡片完全不受影响。
+   若想两侧仍保留一点留白，把 max-width 改成固定值，例如 900px。 */
+.group-box.PI .member-card {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+</style>
 </head>
 <body>
 <table summary="Table for page layout." id="tlayout">
@@ -22,134 +231,217 @@
 <div class="menu-item"><a href="teaching.html">Teaching</a></div>
 <div class="menu-category">Openings</div>
 <div class="menu-item"><a href="openings.html">Openings</a></div>
-</p></td>
+</td>
 <td id="layout-content">
 <div id="toptitle">
 <h1>Team | 6G Space-Air-Ground-Sea Integrated Networks Laboratory </h1>
 </div>
+
 <h2>Current Members </h2>
-<p>&nbsp;</p>
-<ul>
 
-<table class="imgtable"><tr><td>
-<img src="images/Abdul Manan.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Abdul Manan received his B.E. degree in Telecommunication Engineering from University of Engineering and Technology Taxila in 2019. He completed his combined Master’s and Ph.D. degree in Electrical Engineering at University of Ulsan in February 2026. He is currently a postdoctoral researcher at the Eastern Institute of Advanced Study, Eastern Institute of Technology, China. His research interests include wireless communications, radio resource optimization, next generation multiple access, massive MIMO systems, antenna design, and 6G space-air-ground-sea integrated networks. He is particularly focused on developing energy efficient and scalable solutions for next generation wireless networks.
-</td></tr></table>
-<br><br/>
+<!-- ============ 类别一: PI ============ -->
+<div class="group-box PI">
+  <div class="group-head">
+    <h3>Principal Investigator</h3>
+  </div>
+  <div class="member-grid">
 
-<table class="imgtable"><tr><td>
-<img src="images/Zheng Wang.png" alt="alt text" width="126" height="134" />&nbsp;</td>
-<td align="left"><p><br>
-Zheng Wang received his PhD in Electrical and Computer Engineering, George Mason University, USA, in 2020 and worked as a postdoctoral research associate in Virginia Tech. He is now working as a research associate in Institute of Digital Twin, Eastern Institute of Technology, China. His research areas include OFDM/OTFS physical layer design, wireless network resource allocation and management, vehicular communications, AI/ML and game theory in wireless communications, and computational intelligence.
-</td></tr></table>
-<br><br/>
+    <div class="member-card">
+      <div class="avatar" data-name="Bodong Shang"><span class="initials">BS</span>
+        <img src="images/Bodong Shang.jpg" alt="Bodong Shang" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Bodong Shang</div>
+      <div class="member-role">Principal Investigator</div>
+      <p class="member-bio">received his B.Eng. degree in the School of Information Science and Technology at Northwest University, Xi'an, China, his M.S. degree in the School of Telecommunications Engineering at Xidian University, Xi'an, China, and his Ph.D. degree from the Department of Electrical and Computer Engineering at Virginia Tech, Blacksburg, USA. He is currently an Assistant Professor and the Ph.D. supervisor in the School of Electronic Science and Technology, Eastern Institute of Technology, Ningbo, Zhejiang, China. His current research areas are within space-air-ground-sea integrated networks, including resource management in satellite-terrestrial integrated network, satellite-borne and terminal physical-layer communication algorithms, in-space computing and space-native artificial intelligence, and preliminary research on large-scale satellite constellation networking technologies, etc.</p>
+    </div>
 
-<table class="imgtable"><tr><td>
-<img src="images/Tingting Sun.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Tingting Sun  received a Bachelor of Arts degree in Journalism from Ningbo University in 2019, and a Master of Laws degree in Marxist Theory from Ningbo University in 2025. She is now an administrative assistant in the Eastern Institute of Technology (EIT), Ningbo. Her current life interests include writing and sports. She likes to operate WeChat Public account at ordinary times, and has excellent writing skills in both Chinese and English.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Xiangyu Li.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Xiangyu Li received the B.Eng. degree in Electronic Information Engineering from Nantong University, Nantong, China, in June 2021 and the M.S. degree in Electrical and Computer Engineering from Georgia Institute of Technology, Atlanta, United States, in May 2023. He is currently pursuing the Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. His research interests include space-air-ground integrated networks, massive MIMO, wireless system analytics, and interdisciplinary applications of artificial intelligence. He serves as a reviewer and a Technical Program Committee member for several journals and conferences and in the field.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Huayuan Wang.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Huayuan Wang received the B.S. degree in Electronic Information Engineering from Chang'an University, Xi’an, China, in 2022, and the M.S. degree in Electronic Information from Northwestern Polytechnical University, Xi’an, China, in 2025. He is currently pursuing the Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Polytechnical University of Hong Kong (PolyU), HongKong, joint Ph.D. program. His research interests include non-terrestrial networks, cell-free massive MIMO, multi-channel communications, and AI-driven resource management.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Xinyi Huang.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Xinyi Huang received a B.Eng. degree in communications engineering at East China Normal University, Shanghai, China, in 2025. She was a research intern in the Eastern Institute of Technology (EIT), Ningbo. She is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and University of Science and Technology of China (USTC), Hefei, joint Ph.D. program. Her research interests include non-terrestrial networks, satellite MIMO technology, beam-hopping, cooperative communications, and communication theory.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Zuoyu Liu.png" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Zuoyu Liu received his B.E. degree in Measurement Control Technology and Instruments from Soochow University, China, in 2026. He was a research intern in the Eastern Institute of Technology (EIT), Ningbo. He is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. His current research interests include artificial intelligence and optimization in space-air-ground integrated networks.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Yunxuan Yang.jpg" alt="alt text" width="126" height="130" />&nbsp;</td>
-<td align="left"><p><br>
-Yunxuan Yang received his B.E. degree in Communications Engineering from University of Electronic Science and Technology of China, China and University of Glasgow, U.K., and his master's degree from Nanyang Technological University, Singapore. He was a research assistant in the Eastern Institute of Technology (EIT), Ningbo. He is currently pursuing a Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Polytechnical University of Hong Kong (PolyU), HongKong, joint Ph.D. program. His current research interests include stochastic signal and system analysis for satellite-terrestrial integrated networks.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Yongheng Wu.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Yongheng Wu received his B.E. degree in Detection Guidance and Control Technology from Northwestern Polytechnical University, China. He was a research intern in the Eastern Institute of Technology (EIT), Ningbo. He is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. His current research interests include beamforming and multi-user MIMO technologies for low Earth orbit (LEO) satellite communications.
-</td></tr></table>
-<br><br/>
-
-<table class="imgtable"><tr><td>
-<img src="images/Yang Yu.jpg" alt="alt text" width="126" height="155" />&nbsp;</td>
-<td align="left"><p><br>
-Yang Yu received his B.E. degree in Software Engineering from Wuhan Textile University, Wuhan, and his M.S. degree in Software Engineering from Nanchang University, Nanchang. He is currently pursuing a Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and the University of Science and Technology of China (USTC), Hefei, joint Ph.D. program. His current research interests include AI/ML for wireless networks and edge computing systems, with an emphasis on space-air-ground integrated networks.
-</td></tr></table>
-<br><br/>
-
-</ul>
-<br/>
+  </div>
+</div>
 
 
+<!-- ============ 类别二：Ph.D. Students ============ -->
+<div class="group-box phd">
+  <div class="group-head">
+    <h3>Ph.D. Students</h3>
+    <span class="group-sub">Joint &amp; Direct Ph.D. Programs</span>
+    <span class="count">10 members</span>
+  </div>
+  <div class="member-grid">
+
+    <div class="member-card">
+      <div class="avatar" data-name="Xiangyu Li"><span class="initials">XL</span>
+        <img src="images/Xiangyu Li.jpg" alt="Xiangyu Li" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Xiangyu Li</div>
+      <div class="member-role">Joint Ph.D. Student &middot; EIT &amp; SJTU</div>
+      <p class="member-bio">received his B.Eng. degree in Electronic Information Engineering from Nantong University, Nantong, China, in June 2021 and the M.S. degree in Electrical and Computer Engineering from Georgia Institute of Technology, Atlanta, United States, in May 2023. He is currently pursuing the Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. His research interests include space-air-ground integrated networks, cell-free massive MIMO, satellite multiple access technology, and satellite integrated sensing and communications.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Huayuan Wang"><span class="initials">HW</span>
+        <img src="images/Huayuan Wang.jpg" alt="Huayuan Wang" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Huayuan Wang</div>
+      <div class="member-role">Joint Ph.D. Student &middot; EIT &amp; PolyU</div>
+      <p class="member-bio">received his B.S. degree in Electronic Information Engineering from Chang'an University, Xi&rsquo;an, China, in 2022, and the M.S. degree in Electronic Information from Northwestern Polytechnical University, Xi&rsquo;an, China, in 2025. He is currently pursuing the Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Polytechnical University of Hong Kong (PolyU), HongKong, joint Ph.D. program. His research interests include non-terrestrial networks, cell-free massive MIMO, multi-channel communications, and AI-driven resource management.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Xinyi Huang"><span class="initials">XH</span>
+        <img src="images/Xinyi Huang.jpg" alt="Xinyi Huang" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Xinyi Huang</div>
+      <div class="member-role">Direct Ph.D. Student &middot; EIT &amp; USTC</div>
+      <p class="member-bio">received her B.Eng. degree in communications engineering at East China Normal University, Shanghai, China, in 2025. She was a research intern in the Eastern Institute of Technology (EIT), Ningbo. She is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and University of Science and Technology of China (USTC), Hefei, joint Ph.D. program. Her research interests include non-terrestrial networks, satellite MIMO technology, beam-hopping, cooperative communications, and communication theory.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Zuoyu Liu"><span class="initials">ZL</span>
+        <img src="images/Zuoyu Liu.png" alt="Zuoyu Liu" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Zuoyu Liu</div>
+      <div class="member-role">Direct Ph.D. Student &middot; EIT &amp; SJTU</div>
+      <p class="member-bio">received his B.E. degree in Measurement Control Technology and Instruments from Soochow University, China, in 2026. He was a research intern in the Eastern Institute of Technology (EIT), Ningbo. He is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. His current research interests include artificial intelligence and optimization in space-air-ground integrated networks, satellite-borne and terminal physical-layer communication algorithms.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Yunxuan Yang"><span class="initials">YY</span>
+        <img src="images/Yunxuan Yang.jpg" alt="Yunxuan Yang" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Yunxuan Yang</div>
+      <div class="member-role">Joint Ph.D. Student &middot; EIT &amp; PolyU</div>
+      <p class="member-bio">received his B.E. degree in Communications Engineering from University of Electronic Science and Technology of China, China and University of Glasgow, U.K., and his master's degree from Nanyang Technological University, Singapore. He was a research assistant in the Eastern Institute of Technology (EIT), Ningbo. He is currently pursuing a Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Polytechnical University of Hong Kong (PolyU), HongKong, joint Ph.D. program. His current research interests include stochastic signal and system analysis for satellite-terrestrial integrated networks, and spectrum sharing technology in satellite-terrestrial integrated networks.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Yongheng Wu"><span class="initials">YW</span>
+        <img src="images/Yongheng Wu.jpg" alt="Yongheng Wu" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Yongheng Wu</div>
+      <div class="member-role">Direct Ph.D. Student &middot; EIT &amp; SJTU</div>
+      <p class="member-bio">received his B.E. degree in Detection Guidance and Control Technology from Northwestern Polytechnical University, China. He was a research intern in the Eastern Institute of Technology (EIT), Ningbo. He is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. His current research interests include beamforming and multi-user MIMO technologies for low Earth orbit (LEO) satellite communications.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Yang Yu"><span class="initials">YY</span>
+        <img src="images/Yang Yu.jpg" alt="Yang Yu" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Yang Yu</div>
+      <div class="member-role">Joint Ph.D. Student &middot; EIT &amp; USTC</div>
+      <p class="member-bio">received his B.E. degree in Software Engineering from Wuhan Textile University, Wuhan, and his M.S. degree in Software Engineering from Nanchang University, Nanchang. He is currently pursuing a Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and the University of Science and Technology of China (USTC), Hefei, joint Ph.D. program. His current research interests include space inference and training, in-space computing, and space-native AI.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Yuhao Mo"><span class="initials">YM</span>
+        <img src="images/Yuhao Mo.jpg" alt="Yuhao Mo" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Yuhao Mo</div>
+      <div class="member-role">Direct Ph.D. Student &middot; EIT &amp; USTC</div>
+      <p class="member-bio">received his B.Eng. degree in Communications Engineering from Northwest University, Xi'an, China, in 2027. He is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and the University of Science and Technology of China (USTC), Hefei, joint Ph.D. program. His research interests include satellite covert communications, stochastic geometry, and the modeling, analysis, and design of satellite-terrestrial integrated networks.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Aojun Zhang"><span class="initials">AZ</span>
+        <img src="images/Aojun Zhang.jpg" alt="Aojun Zhang" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Aojun Zhang</div>
+      <div class="member-role">Direct Ph.D. Student &middot; EIT &amp; SJTU</div>
+      <p class="member-bio">received her B.E. degree in Flight Vehicle Control and Information Engineering at Sichuan University, Chengdu, China. She is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. Her current research interests include satellite communications, physical-layer signal processing, channel estimation, and sensing and localization.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Yirui Li"><span class="initials">YL</span>
+        <img src="images/Yirui Li.jpg" alt="Yirui Li" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Yirui Li</div>
+      <div class="member-role">Direct Ph.D. Student &middot; EIT &amp; SJTU</div>
+      <p class="member-bio">received her B.Eng. degree in communications engineering from University of Science and Technology Beijing, Beijing, China, in 2027. She is currently pursuing a direct Ph.D. degree in the Eastern Institute of Technology (EIT), Ningbo, and Shanghai Jiao Tong University (SJTU), Shanghai, joint Ph.D. program. Her research interests mainly include the integrated design of LEO satellite communications, in-space computing, and space-native AI.</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ============ 类别三：Undergraduate Students ============ -->
+<div class="group-box UG">
+  <div class="group-head">
+    <h3>Undergraduate Students</h3>
+    <span class="group-sub">Undergraduate Students</span>
+    <span class="count">4 members</span>
+  </div>
+  <div class="member-grid">
+
+    <div class="member-card">
+      <div class="avatar" data-name="Quanshu Yao"><span class="initials">QY</span>
+        <img src="images/Quanshu Yao.jpg" alt="Quanshu Yao" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Quanshu Yao</div>
+      <div class="member-role">Undergraduate Student</div>
+      <p class="member-bio">is an undergraduate student majoring in Electronic Science and Technology at the Eastern Institute of Technology (EIT), Ningbo, Zhejiang, China. He joined Prof. Bodong Shang’s research group in 2026. His current research interests include low Earth orbit (LEO) satellite communications and beam hopping.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Yiyang Gong"><span class="initials">YG</span>
+        <img src="images/Yiyang Gong.jpg" alt="Yiyang Gong" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Yiyang Gong</div>
+      <div class="member-role">Undergraduate Student</div>
+      <p class="member-bio">is currently an undergraduate student pursuing a B.E. degree in E.E at the Eastern Institute of Technology (EIT), Ningbo, and is expected to graduate in 2029. His current research interests include the integrated design of satellite communication and computing.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Chuanzhen Tian"><span class="initials">CT</span>
+        <img src="images/Chuanzhen Tian.jpg" alt="Chuanzhen Tian" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Chuanzhen Tian</div>
+      <div class="member-role">Undergraduate Student</div>
+      <p class="member-bio">is an undergraduate student at Eastern Institute of Technology (EIT), majoring in Electronic Science and Technology. He joined Prof. Bodong Shang’s research team in 2026, and his research interests focus on 6G wireless communications and space‑air‑ground‑sea integrated networks.</p>
+    </div>
+
+    <div class="member-card">
+      <div class="avatar" data-name="Zihan Wang"><span class="initials">ZW</span>
+        <img src="images/Zihan Wang.jpg" alt="Zihan Wang" onerror="this.remove()" />
+      </div>
+      <div class="member-name">Zihan Wang</div>
+      <div class="member-role">Undergraduate Student</div>
+      <p class="member-bio">is an undergraduate student, has been studying at Eastern Institute of Technology, Ningbo since 2025. His current research focuses on the design, modeling, and analysis of cache in low Earth orbit (LEO) satellite networks.</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ============ Alumni ============ -->
 <h2>Alumni </h2>
-<ul>
-
-<br>
-Yunxuan Yang, research intern in 2025 (M.S. degree at Nanyang Technological University, Singapore).<br/>
-
-<br>
-Zuoyu Liu, research intern in 2026 (B.Eng: Soochow University, China).<br/>
-
-<br>
-Yongheng Wu, research intern in 2026 (B.Eng: Northwestern Polytechnical University, China).<br/>
-
-<br>
-Yuanhao Wang, research intern in 2025 (B.Eng: Henan Polytechnic University, China).<br/>
-
-<br>
-Mengmeng Zhang, research intern in 2025 (B.Eng: Northwest Normal University, China).<br/>
-
-<br>
-Zhuhang Li, research intern in 2024 (M.S. degree at Nanyang Technological University, Singapore).<br/>
-
-<br>
-Caiguo Li, research intern in 2024 (M.S. degree at Shenzhen University, China).<br/>
-
-<br>
-Shiyu Xi, research intern in  2023  (M.S. student at China University of Petroleum (East China), China).<br/>
-
-<br>
-Xiangyu Li, research intern in  2023 (M.S. degree Georgia Institute of Technology, United States).<br/>
-
-
-</ul>
-<br/>
-
+<div class="group-box alumni-box">
+  <div class="group-head">
+    <h3>Former Members</h3>
+    <span class="group-sub">Interns &amp; research assistants &amp; visiting students</span>
+    <span class="count">9 alumni</span>
+  </div>
+  <ul class="alumni-list">
+    <li>Yunxuan Yang, research intern in 2025 (M.S. degree at Nanyang Technological University, Singapore).</li>
+    <li>Zuoyu Liu, research intern in 2026 (B.Eng: Soochow University, China).</li>
+    <li>Yongheng Wu, research intern in 2026 (B.Eng: Northwestern Polytechnical University, China).</li>
+    <li>Yuanhao Wang, research intern in 2025 (B.Eng: Henan Polytechnic University, China).</li>
+    <li>Mengmeng Zhang, research intern in 2025 (B.Eng: Northwest Normal University, China).</li>
+    <li>Zhuhang Li, research intern in 2024 (M.S. degree at Nanyang Technological University, Singapore).</li>
+    <li>Caiguo Li, research intern in 2024 (M.S. degree at Shenzhen University, China).</li>
+    <li>Shiyu Xi, research intern in 2023 (M.S. student at China University of Petroleum (East China), China).</li>
+    <li>Xiangyu Li, research intern in 2023 (M.S. degree Georgia Institute of Technology, United States).</li>
+  </ul>
+</div>
 
 <h2>Join Us</h2>
 <p><a href="openings.html">[<b><u>Openings</u></b>.]</a><br/></p>
-<br/>
-<p>Eastern Institute of Technology (EIT), Ningbo is a new research-based university under active construction. EIT is invested by Yu, Renrong Education Foundation and supported by Zhejiang Provincial Government and Ningbo Municipal Government. EIT aims to be “high-level, innovative and international” and to build a teaching staff, management team, teaching and scientific research environment according to the world-class standards. EIT plans to establish four discipline groups of science, engineering, information and business as well as characteristic humanity and society discipline, emphasizing the simultaneous development of basic research and applied research, highlighting the cross-integration of disciplines, devoting itself to building a talent training system with international standards and characteristics of EIT, and training top-notch innovative talents with “solid foundation, innovative ability, deep concern for the family and the country, and international vision”.</p>
-<br/>
-<br/>
-<br/>
-<br/>
+<p>Eastern Institute of Technology (EIT), Ningbo is a new research-based university under active construction. EIT is invested by Yu, Renrong Education Foundation and supported by Zhejiang Provincial Government and Ningbo Municipal Government. EIT aims to be &ldquo;high-level, innovative and international&rdquo; and to build a teaching staff, management team, teaching and scientific research environment according to the world-class standards. EIT plans to establish four discipline groups of science, engineering, information and business as well as characteristic humanity and society discipline, emphasizing the simultaneous development of basic research and applied research, highlighting the cross-integration of disciplines, devoting itself to building a talent training system with international standards and characteristics of EIT, and training top-notch innovative talents with &ldquo;solid foundation, innovative ability, deep concern for the family and the country, and international vision&rdquo;.</p>
 
 
+
+
+<h2>Campus</h2>
 <table class="imgtable"><tr>
 <td position: fixed; bottom: 0; align="center">
 <img src="images/EIT 1.jpg" alt="EIT1" width="600px" height="300px" />&nbsp;&nbsp;&nbsp;  
@@ -165,6 +457,25 @@ Xiangyu Li, research intern in  2023 (M.S. degree Georgia Institute of Technolog
 <img src="images/EIT 11.jpg" alt="EIT11" width="600" height="711" />&nbsp;&nbsp;&nbsp; 
 <img src="images/EIT 12.jpg" alt="EIT12" width="600" height="533" />&nbsp;&nbsp;&nbsp;
 </td></tr></table>
+
+
+
+
+<h2>Activities</h2>
+<div class="campus-gallery">
+  <img src="images/灵峰合照.jpg"  alt="灵峰合"  />
+  <img src="images/小龙湫合照.jpg"  alt="小龙湫合照"  />
+  <img src="images/小龙湫.jpg" alt="小龙湫" />
+  <img src="images/三折瀑合照.jpg" alt="三折瀑合照" />
+  <img src="images/三折瀑.jpg"  alt="三折瀑"  />
+  <img src="images/大龙湫合照.jpg"  alt="大龙湫合照"  />
+  <img src="images/大龙湫.jpg"  alt="大龙湫"  />
+  <img src="images/信号与系统课1.jpg"  alt="信号与系统课1"  />
+  <img src="images/信号与系统课2.jpg"  alt="信号与系统课2"  />
+  <img src="images/温州招生.jpg" alt="温州招生" />
+  <img src="images/导论课.jpg" alt="导论课" />
+  <img src="images/朝阳洞.jpg" alt="朝阳洞" />
+</div>
 
 </td>
 </tr>
